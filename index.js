@@ -9,7 +9,7 @@ require("dotenv").config();
 
 const app = express();
 connectDatabase();
-app.use(cors());
+app.use(cors({ origin: "*", credentials: true }));
 app.use("/uploads", express.static("uploads"));
 
 
