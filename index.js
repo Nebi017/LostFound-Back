@@ -16,7 +16,10 @@ connectDatabase();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
-
+app.get("/", (request, response) => {
+  console.log(request);
+  return response.status(234).send("welcome to Mern Stack");
+});
 // POST route to create a new lost/found item
 app.use("/api/items", itemRoute);
 app.use("/api/contact", contactRoutes);
